@@ -8,6 +8,13 @@ export const Home = () => {
   const [loading, setLoading] = useState('fail');
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemonsPerPage] = useState(12);
+  const [userValue, setUserValue] = useState('');
+
+  const filteredStr = () => {
+    userValue.filter((value) => {
+      console.log(value);
+    });
+  };
 
   useEffect(() => {
     setLoading('loading');
@@ -27,7 +34,8 @@ export const Home = () => {
 
   return (
     <>
-      <SearchInput />
+      <SearchInput param={(userValue) => setUserValue(userValue)} />
+      <p>{userValue}</p>
       <Pokemons pokemons={currentPokemons} loading={loading} />
       <Pagination
         pokemonsPerPage={pokemonsPerPage}

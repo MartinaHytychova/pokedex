@@ -19,7 +19,7 @@ export const PokemonItem = ({ item }) => {
   const url = item.url;
   const id = url.substr(-3).replace(/^\/|\/$/g, '');
 
-  let content = <h2>Nic tu není 😢</h2>;
+  let content = <h2 className="pokemon__loading">Nic tu není 😢</h2>;
 
   if (loading === 'success') {
     content = (
@@ -36,7 +36,7 @@ export const PokemonItem = ({ item }) => {
       </>
     );
   } else if (loading === 'loading') {
-    content = <h2>Načítám...⏳</h2>;
+    content = <h2 className="pokemon__loading">Načítám...⏳</h2>;
   }
 
   return (
@@ -45,7 +45,7 @@ export const PokemonItem = ({ item }) => {
       <li className="pokemon__item">
         <Link
           to={{
-            pathname: `/${pokemonItem.name}`,
+            pathname: `/pokemon/${pokemonItem.name}`,
             state: pokemonItem,
           }}
           className="pokemon__link"

@@ -2,7 +2,6 @@ import React from 'react';
 import './style.scss';
 
 export const ProfileStatistic = (match) => {
-  console.log(match.pokemon);
   const pokemonStatistic = match.pokemon;
   const color = '#ff3e4e';
   return (

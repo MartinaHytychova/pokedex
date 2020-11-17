@@ -32,6 +32,10 @@
     justify-content: center;
     align-items: center;
     background-color: $color-white;
+    &--inactive {
+      opacity: 0.7;
+      height: 40px;
+    }
   }
   &__icon {
     width: 20px;
@@ -41,6 +45,7 @@
     text-decoration: none;
     color: $color-red;
     font-weight: bold;
+    align-self: flex-end;
     @include font-size(14px);
     &:hover,
     :focus {

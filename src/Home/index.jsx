@@ -10,11 +10,9 @@ export const Home = () => {
   const [pokemonsPerPage] = useState(12);
   const [userValue, setUserValue] = useState('');
 
-  const filteredStr = () => {
-    userValue.filter((value) => {
-      console.log(value);
-    });
-  };
+  const filtered = pokemons.filter((pokemon) => {
+    return pokemon.name.includes(userValue);
+  });
 
   useEffect(() => {
     setLoading('loading');
@@ -29,7 +27,7 @@ export const Home = () => {
 
   const lastPokemon = currentPage * pokemonsPerPage;
   const firstPokemon = lastPokemon - pokemonsPerPage;
-  const currentPokemons = pokemons.slice(firstPokemon, lastPokemon);
+  const currentPokemons = filtered.slice(firstPokemon, lastPokemon);
   const paginate = (number) => setCurrentPage(number);
 
   return (
@@ -39,7 +37,7 @@ export const Home = () => {
       <Pokemons pokemons={currentPokemons} loading={loading} />
       <Pagination
         pokemonsPerPage={pokemonsPerPage}
-        totalPokemons={pokemons.length}
+        totalPokemons={filtered.length}
         paginate={paginate}
       />
     </>

@@ -3,10 +3,10 @@ import { BrowserRouter as Route, Link } from 'react-router-dom';
 import './style.scss';
 import { ProfileDetail } from '../ProfileDetail/index.jsx';
 import { ProfileStatistic } from '../ProfileStatistic/index.jsx';
+import search from '../img/search.svg';
 
 export const Profile = (match) => {
   const location = match.location.pathname;
-  console.log(match);
   const pokemon = match.location.state;
 
   return (
@@ -22,8 +22,14 @@ export const Profile = (match) => {
                 }}
                 className="navbar__link"
               >
-                <li className="navbar__item">
-                  <img className="navbar__icon" src="../img/arrows.svg" />
+                <li
+                  className={
+                    location === `/pokemon/${pokemon.name}/statistic`
+                      ? 'navbar__item navbar__item--inactive'
+                      : 'navbar__item'
+                  }
+                >
+                  <img className="navbar__icon" src={search} />
                   Profil
                 </li>
               </Link>
@@ -34,7 +40,13 @@ export const Profile = (match) => {
                 }}
                 className="navbar__link"
               >
-                <li className="navbar__item">
+                <li
+                  className={
+                    location === `/pokemon/${pokemon.name}`
+                      ? 'navbar__item navbar__item--inactive'
+                      : 'navbar__item'
+                  }
+                >
                   <img className="navbar__icon" src="../img/arrows.svg" />
                   Statistiky
                 </li>

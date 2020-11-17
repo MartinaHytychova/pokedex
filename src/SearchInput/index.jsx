@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.scss';
 import search from '../img/search.svg';
 import cancel from '../img/cancel.svg';
 
 export const SearchInput = ({ param }) => {
-
   return (
     <>
       <div className="search">
@@ -13,7 +12,7 @@ export const SearchInput = ({ param }) => {
             <img src={search} className="search__icon-search" />
           </a>
           <input
-            onKeyDown={(e) => param(e.target.value)}
+            onChange={(e) => param(e.target.value)}
             type="text"
             className="search__input"
           />{' '}

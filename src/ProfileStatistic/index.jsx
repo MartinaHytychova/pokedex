@@ -3,6 +3,8 @@ import './style.scss';
 
 export const ProfileStatistic = (match) => {
   const pokemonStatistic = match.pokemon;
+  const allStats = pokemonStatistic.stats.map((stat) => stat.base_stat);
+  const max = Math.max(...allStats);
   const color = '#ff3e4e';
   return (
     <>
@@ -13,6 +15,7 @@ export const ProfileStatistic = (match) => {
             <img
               src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonStatistic.id}.png`}
               className="profile-statistic__image"
+              alt="pokemon-statistic"
             />
           </div>
           <div className="profile-statistic__info">
@@ -23,11 +26,15 @@ export const ProfileStatistic = (match) => {
                   <div
                     className="profile-statistic__value--inner"
                     style={{
-                      width: `${pokemonStatistic.stats[0].base_stat}%`,
+                      width: `${
+                        (pokemonStatistic.stats[0].base_stat / max) * 100
+                      }%`,
                       backgroundColor: `${color}`,
                     }}
                   >
-                    {pokemonStatistic.stats[0].base_stat}
+                    <span className="profile-statistic__number">
+                      {pokemonStatistic.stats[0].base_stat}
+                    </span>
                   </div>
                 </div>
               </li>
@@ -37,11 +44,15 @@ export const ProfileStatistic = (match) => {
                   <div
                     className="profile-statistic__value--inner"
                     style={{
-                      width: `${pokemonStatistic.stats[1].base_stat}%`,
+                      width: `${
+                        (pokemonStatistic.stats[1].base_stat / max) * 100
+                      }%`,
                       backgroundColor: `${color}`,
                     }}
                   >
-                    {pokemonStatistic.stats[1].base_stat}
+                    <span className="profile-statistic__number">
+                      {pokemonStatistic.stats[1].base_stat}
+                    </span>
                   </div>
                 </div>
               </li>
@@ -51,11 +62,15 @@ export const ProfileStatistic = (match) => {
                   <div
                     className="profile-statistic__value--inner"
                     style={{
-                      width: `${pokemonStatistic.stats[2].base_stat}%`,
+                      width: `${
+                        (pokemonStatistic.stats[2].base_stat / max) * 100
+                      }%`,
                       backgroundColor: `${color}`,
                     }}
                   >
-                    {pokemonStatistic.stats[2].base_stat}
+                    <span className="profile-statistic__number">
+                      {pokemonStatistic.stats[2].base_stat}
+                    </span>
                   </div>
                 </div>
               </li>
@@ -65,11 +80,15 @@ export const ProfileStatistic = (match) => {
                   <div
                     className="profile-statistic__value--inner"
                     style={{
-                      width: `${pokemonStatistic.stats[3].base_stat}%`,
+                      width: `${
+                        (pokemonStatistic.stats[3].base_stat / max) * 100
+                      }%`,
                       backgroundColor: `${color}`,
                     }}
                   >
-                    {pokemonStatistic.stats[3].base_stat}
+                    <span className="profile-statistic__number">
+                      {pokemonStatistic.stats[3].base_stat}
+                    </span>
                   </div>
                 </div>
               </li>
@@ -79,11 +98,15 @@ export const ProfileStatistic = (match) => {
                   <div
                     className="profile-statistic__value--inner"
                     style={{
-                      width: `${pokemonStatistic.stats[4].base_stat}%`,
+                      width: `${
+                        (pokemonStatistic.stats[4].base_stat / max) * 100
+                      }%`,
                       backgroundColor: `${color}`,
                     }}
                   >
-                    {pokemonStatistic.stats[4].base_stat}
+                    <span className="profile-statistic__number">
+                      {pokemonStatistic.stats[4].base_stat}
+                    </span>
                   </div>
                 </div>
               </li>
@@ -93,11 +116,15 @@ export const ProfileStatistic = (match) => {
                   <div
                     className="profile-statistic__value--inner"
                     style={{
-                      width: `${pokemonStatistic.stats[5].base_stat}%`,
+                      width: `${
+                        (pokemonStatistic.stats[5].base_stat / max) * 100
+                      }%`,
                       backgroundColor: `${color}`,
                     }}
                   >
-                    {pokemonStatistic.stats[5].base_stat}
+                    <span className="profile-statistic__number">
+                      {pokemonStatistic.stats[5].base_stat}
+                    </span>
                   </div>
                 </div>
               </li>

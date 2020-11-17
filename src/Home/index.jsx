@@ -30,11 +30,21 @@ export const Home = () => {
   const currentPokemons = filtered.slice(firstPokemon, lastPokemon);
   const paginate = (number) => setCurrentPage(number);
 
+  const handleFilter = (e) => {
+    setUserValue(e);
+  };
   return (
     <>
-      <SearchInput param={(userValue) => setUserValue(userValue)} />
-      <p>{userValue}</p>
-      <Pokemons pokemons={currentPokemons} loading={loading} />
+      <SearchInput
+        paramSearch={(userValue) => handleFilter(userValue)}
+        paramChange={userValue}
+      />
+      <Pokemons
+        paramFromFilter={(e) => handleFilter(e)}
+        userValue={userValue}
+        pokemons={currentPokemons}
+        loading={loading}
+      />
       <Pagination
         pokemonsPerPage={pokemonsPerPage}
         totalPokemons={filtered.length}

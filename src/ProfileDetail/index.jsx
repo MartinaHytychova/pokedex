@@ -11,7 +11,7 @@ export const ProfileDetail = (match) => {
             <p className="profile-detail__name">{pokemonProfile.name}</p>
             <img
               src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonProfile.id}.png`}
-              className="profile-detail__image"
+              className="profile-detail__image" alt="pokemon-profile"
             />
           </div>
           <div className="profile-detail__info">

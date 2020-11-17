@@ -6,6 +6,14 @@
   background-color: $color-white;
   flex-direction: column;
   max-width: 800px;
+  &__link {
+    color: $color-black;
+    font-weight: bold;
+    text-decoration: none;
+    @include font-size(14px);
+    background-color: $color-blueLight;
+    cursor: pointer;
+  }
 }
 
 .navbar {
@@ -38,8 +46,7 @@
     }
   }
   &__icon {
-    width: 20px;
-    height: 20px;
+    margin-right: 10px;
   }
   &__link {
     text-decoration: none;
@@ -47,9 +54,6 @@
     font-weight: bold;
     align-self: flex-end;
     @include font-size(14px);
-    &:hover,
-    :focus {
-      text-decoration: underline;
-    }
+    text-decoration: none;
   }
 }

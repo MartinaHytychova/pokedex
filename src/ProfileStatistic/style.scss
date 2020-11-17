@@ -64,16 +64,23 @@
 
   &__value {
     margin-left: 10px;
+    display: flex;
     @include font-size(14px);
     background-color: $color-redLight;
     min-width: 250px;
     border-radius: 5px;
+    overflow: hidden;
     &--inner {
-      max-width: 200px;
-      padding: 10px 15px;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
       color: $color-white;
+      align-items: center;
+      display: flex;
     }
+  }
+
+  &__number {
+    margin-left: 10px;
+    display: flex;
   }
 }

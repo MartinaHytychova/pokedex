@@ -25,7 +25,10 @@ export const SearchInput = ({ paramSearch, paramChange }) => {
             value={searchValue}
             className="search__input"
           />{' '}
-          <img src={cancel} className="search__icon-cancel" alt="cancel-icon" />
+          <button
+            onClick={() => paramSearch('')}
+            className="search__icon-cancel"
+          ></button>
         </label>
       </div>
     </>
